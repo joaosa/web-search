@@ -1,5 +1,6 @@
 package bootstrap.liftweb
 
+import scala.language.postfixOps
 import net.liftweb._
 import util._
 import Helpers._
@@ -9,6 +10,7 @@ import sitemap._
 import Loc._
 import mapper._
 import mapper.view.TableEditor
+import net.liftweb.http.js.jquery.JQueryArtifacts
 import net.liftmodules.widgets.flot._
 import reactive.web.Reactions
 import net.liftweb.http.ResourceServer
@@ -46,8 +48,8 @@ class Boot {
     //LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
     LiftRules.setSiteMapFunc(() => sitemap())
 
-    // Use jQuery 1.4
-    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQueryArtifacts
+    // Use jQuery
+    LiftRules.jsArtifacts = JQueryArtifacts
 
     //Show the spinny image when an Ajax call starts
     LiftRules.ajaxStart =
