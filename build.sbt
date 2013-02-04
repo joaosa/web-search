@@ -2,11 +2,13 @@ name := "web-search"
 
 version := "1.0"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.10.0"
 
 scalacOptions += "-deprecation"
 
 scalacOptions += "-unchecked"
+
+scalacOptions += "-feature"
 
 seq(webSettings: _*)
 
@@ -27,8 +29,8 @@ libraryDependencies ++= {
 }
 
 libraryDependencies ++= Seq(
-  "com.github.scala-incubator.io" %% "scala-io-core" % "0.4.1-seq",
-  "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.1-seq",
+  "com.github.scala-incubator.io" %% "scala-io-core" % "0.4.1",
+  "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.1",
   "nu.validator.htmlparser" % "htmlparser" % "1.2.1"
 )
 

@@ -138,7 +138,7 @@ object Amazon extends Searcher with Crawler {
     try {
       Full(load(new URL(name).openConnection.getInputStream))
     } catch {
-      case _ => Empty
+      case _ : Throwable => Empty
     }
 
   def crawl(start: String, limit: String): Set[Entry] = {
